@@ -1,0 +1,323 @@
+/* App Layout */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fafbf5;
+  color: #333;
+}
+
+
+#root {
+  min-height: 100vh;
+}
+
+
+/* Main Container */
+
+.user-container {
+
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.784);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e293b !important;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+
+/* Form Styling */
+
+form {
+
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+
+}
+
+
+input {
+
+  flex: 1;
+  min-width: 220px;
+  padding: 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-size: 15px;
+
+}
+
+
+input:focus {
+
+  outline: none;
+  border-color: #2563eb;
+
+}
+
+
+
+/* Buttons */
+
+button {
+
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  background: #2563eb;
+
+  color: white;
+
+}
+
+
+button:hover {
+
+  opacity: 0.85;
+
+}
+
+
+
+/* Table */
+
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+}
+
+
+thead {
+
+  background: #2563eb;
+
+  color: white;
+
+}
+
+
+th,
+td {
+
+  padding: 14px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #eee;
+
+}
+
+
+tbody tr:hover {
+
+  background: #f8fafc;
+
+}
+
+
+
+/* Action Buttons */
+
+td button {
+
+  margin-right: 8px;
+
+}
+
+
+td button:last-child {
+
+  background: #dc2626;
+
+}
+
+
+
+/* Loader */
+
+.loader {
+
+  text-align: center;
+
+  font-size: 20px;
+
+  margin-top: 100px;
+
+  color: #2563eb;
+
+}
+
+
+
+/* Error Message */
+
+.error {
+
+  color: red;
+
+  text-align: center;
+
+  margin: 20px;
+
+}
+
+
+/* Empty State */
+
+.empty {
+
+  text-align: center;
+
+  padding: 30px;
+
+  color: gray;
+
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+.auth-container,
+.dashboard {
+  width: 400px;
+  margin: 60px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.auth-container h2,
+.dashboard h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.auth-container button,
+.dashboard button {
+  padding: 10px;
+  background: royalblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-container button:hover,
+.dashboard button:hover {
+  background: #244fc7;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.notification-bell-container {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-bell-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+.notification-dropdown {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.notification-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.notification-item.unread {
+  background: #f0f4ff;
+  font-weight: 600;
+}
+
+.notification-time {
+  font-size: 11px;
+  color: #888;
+  display: block;
+  margin-top: 4px;
+}
+
+.notification-empty {
+  padding: 16px;
+  text-align: center;
+  color: #888;
+}
