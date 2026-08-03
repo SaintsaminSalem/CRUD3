@@ -9,8 +9,9 @@ const userSockets = new Map(); // userId -> Set of socket ids
 export const initSocket = (httpServer) => {
   io = new Server(httpServer, {
     cors: {
-      origin: "*", // tighten this to your frontend URL in production
+      origin: process.env.CLIENT_URL || "*",
       methods: ["GET", "POST"],
+      credentials: true,
     },
   });
 

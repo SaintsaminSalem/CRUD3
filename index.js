@@ -18,7 +18,12 @@ import { buildContext } from "./graphql/authContext.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: process.env.CLIENT_URL || "*",
+  credentials: true,
+}));
+
 app.use(bodyParser.json());
 
 app.use("/api/user", route);
@@ -32,7 +37,7 @@ app.use(
     schema,
     rootValue: resolvers,
     context: buildContext(req),
-    graphiql: true, // gives you an in-browser query playground at /graphql
+    graphiql: process.env.NODE_ENV !== "production", // disable playground in production
   }))
 );
 
@@ -41,6 +46,11 @@ initSocket(server);
 
 const PORT = process.env.PORT || 8000;
 const MONGOURL = process.env.MONGO_URL;
+
+if (!MONGOURL) {
+  console.error("MONGO_URL is not defined in environment variables.");
+  process.exit(1);
+}
 
 mongoose
   .connect(MONGOURL)
