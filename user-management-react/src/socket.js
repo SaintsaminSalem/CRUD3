@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const SOCKET_URL = `${import.meta.env.VITE_API_URL}/socket`; // match your backend port
+const SOCKET_URL = import.meta.env.VITE_API_URL;
 
 let socket = null;
 
@@ -14,6 +14,7 @@ export const connectSocket = () => {
 
   socket = io(SOCKET_URL, {
     auth: { token },
+    transports: ["websocket", "polling"], // allow fallback if websocket upgrade fails
   });
 
   return socket;
